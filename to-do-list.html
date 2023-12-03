@@ -1,0 +1,132 @@
+<html>
+<head>
+  <style>
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333333;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #cccccc;
+      background-color: #ffffff;
+    }
+
+    .form {
+      display: flex;
+      align-items: center;
+    }
+
+    .input {
+      flex: 1;
+      height: 40px;
+      font-size: 20px;
+      margin-right: 10px;
+      border: 1px solid #cccccc;
+    }
+
+    .button {
+      height: 40px;
+      font-size: 20px;
+      margin-left: 10px;
+      background-color: #eeeeee;
+      border: 1px solid #cccccc;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #cccccc;
+    }
+
+    .text {
+      flex: 1;
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    .remove {
+      height: 40px;
+      font-size: 20px;
+      margin-left: 10px;
+      background-color: #eeeeee;
+      border: 1px solid #cccccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive To-Do List</h1>
+  <div class="container">
+    <form id="form" class="form">
+      <input type="text" id="input" class="input" placeholder="Enter a task">
+      <button id="submit" class="button">Add</button>
+    </form>
+    
+    <ul id="list" class="list"></ul>
+  </div>
+  <script>
+    
+    var form = document.getElementById("form");
+    var input = document.getElementById("input");
+    var submit = document.getElementById("submit");
+    var list = document.getElementById("list");
+
+
+    function addTask(event) {
+      
+      event.preventDefault();
+      
+      var task = input.value.trim();
+    
+      if (task) {
+        
+        var item = document.createElement("li");
+        item.className = "item";
+        
+        var text = document.createElement("span");
+        text.className = "text";
+        text.textContent = task;
+        
+        var remove = document.createElement("button");
+        remove.className = "remove";
+        remove.textContent = "Remove";
+       
+        item.appendChild(text);
+        item.appendChild(remove);
+        
+        list.appendChild(item);
+        
+        input.value = "";
+        
+        remove.addEventListener("click", deleteTask);
+      }
+    }
+
+    function deleteTask(event) {
+     
+      var target = event.target;
+      
+      var parent = target.parentElement;
+     
+      list.removeChild(parent);
+    }
+
+    form.addEventListener("submit", addTask);
+  </script>
+</body>
+</html>

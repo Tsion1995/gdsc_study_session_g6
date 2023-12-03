@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Counter</title>
+    </head>
+    <body>
+     <style>
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+        button{
+            color: red;
+            cursor: pointer;
+        
+        }
+     </style>
+            <h1 id="count">0</h1>
+            <button id="increment">Increment</button>
+            <button id="decrement">decrement</button>
+            <script>
+                var count= document.getElementById("count");
+                var increment=document.getElementById("increment");
+                var decrement=document.getElementById("decrement");
+                let countValue=0;
+                function incrementValue(){
+                    countValue++;
+                    count.textContent=countValue;
+                }
+                function decrementValue(){
+                    countValue--;
+                    count.textContent=countValue;
+                }
+                increment.addEventListener("click", incrementValue);
+    decrement.addEventListener("click", decrementValue);
+            </script>
+        
+    </body>
+</html>

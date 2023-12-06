@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/tsion/OneDrive/Desktop/GDSC",
-      "program": "c:/Users/tsion/OneDrive/Desktop/GDSC/build/Debug/outDebug",
+      "cwd": "c:/Users/tsion/OneDrive/Desktop/gdsc_study_session_g6",
+      "program": "c:/Users/tsion/OneDrive/Desktop/gdsc_study_session_g6/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
